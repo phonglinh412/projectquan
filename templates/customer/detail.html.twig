@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-md col-md-8 mt-3 mb-3 text-center">
+		<a href="{{ path('customer_add') }}">
+			<img src="{{ asset('images/add.jpg') }}" width="80" heigh="60">
+		</a>
+		<table class="table table-responsive-md mt-3">
+			<thead>
+				<tr>
+					<th>Customer Name</th>
+					<th>Customer PhoneNumber</th>
+					<th>Customer Email</th>
+					<th>Customer Address</th>
+					<th>Customer Order</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						{{ customer.name }}
+					</td>
+					<td>
+						{{ customer.phoneNumber }}
+					</td>
+					<td>
+						{{ customer.email }}
+					</td>
+					<td>
+						{{ customer.address }}
+					</td>
+					<td>
+						{%for order in customer.orders %}
+							{{order.location}}
+						{%endfor %}
+					</td>
+					<td>
+						<a href="{{ path('customer_edit', {'id' : customer.id }) }}">
+							<img src="{{ asset('images/edit.png') }}" width="50" height="50">
+						</a>
+					</td>
+					<td>
+						<a href="{{ path('customer_delete', {'id' : customer.id }) }}" onclick="return confirm('Do you want to delete this customer ?')">
+							<img src="{{ asset('images/delete.png') }}" width="50" height="50">
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

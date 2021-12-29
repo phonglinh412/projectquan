@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container col-md-6 mt-3 mb-3">
+   <h2 class="text-center">ADD NEW EMPLOYEE</h2>
+   <div class="col md-6"></div>
+      {{ form_start (employeeForm) }}
+         <div class="form-group">
+            {{ form_label (employeeForm.name)}}
+            {{ form_widget (employeeForm.name ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (employeeForm.address)}}
+            {{ form_widget (employeeForm.address ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (employeeForm.contactNumber)}}
+            {{ form_widget (employeeForm.contactNumber ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (employeeForm.position)}}
+            {{ form_widget (employeeForm.position ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (employeeForm.order)}}
+            {{ form_widget (employeeForm.order ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group text-center mt-3">
+            <input class="btn btn-primary" type="submit" value="Add" />
+         </div>
+      {{ form_end (employeeForm)}}
+   </div>
+</div>
+{% endblock %}

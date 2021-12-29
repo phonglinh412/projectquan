@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container col-md-6 mt-3 mb-3">
+   <h2 class="text-center">EDIT CUSTOMER</h2>
+   <div class="col md-6"></div>
+      {{ form_start (customerForm) }}
+         <div class="form-group">
+            {{ form_label (customerForm.name)}}
+            {{ form_widget (customerForm.name ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (customerForm.address)}}
+            {{ form_widget (customerForm.address ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (customerForm.phoneNumber)}}
+            {{ form_widget (customerForm.phoneNumber ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (customerForm.email)}}
+            {{ form_widget (customerForm.email ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group">
+            {{ form_label (customerForm.order)}}
+            {{ form_widget (customerForm.order ,
+               {
+                  'attr' : {'class' : 'form-control'}
+               })
+            }}
+         </div>
+         <div class="form-group text-center mt-3">
+            <input class="btn btn-primary" type="submit" value="Edit" />
+         </div>
+      {{ form_end (customerForm)}}
+   </div>
+</div>
+{% endblock %}
